@@ -1,34 +1,11 @@
-const fieldsets = document.querySelectorAll("#msform fieldset");
-const nextBtns = document.querySelectorAll(".next");
-const prevBtns = document.querySelectorAll(".previous");
-const progressbar = document.querySelectorAll("#progressbar li");
+function login() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
 
-let current = 0;
-
-function showStep(index) {
-  fieldsets.forEach((fs, i) => {
-    fs.classList.toggle("active", i === index);
-    progressbar[i].classList.toggle("active", i <= index);
-  });
+  // Dummy credentials
+  if (username === "Aniket Verma" && password === "270405") {
+    window.location.href = "https://billybutcherfky.github.io/aniketverma/";
+  } else {
+    alert("Invalid Username or Password!");
+  }
 }
-
-nextBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    if (current < fieldsets.length - 1) {
-      current++;
-      showStep(current);
-    }
-  });
-});
-
-prevBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    if (current > 0) {
-      current--;
-      showStep(current);
-    }
-  });
-});
-
-// Show the first step initially
-showStep(current);
