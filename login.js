@@ -4,7 +4,7 @@ function login() {
 
   // Dummy credentials
   if (username === "Aniket Verma" && password === "270405") {
-    window.location.href = "https://billybutcherfky.github.io/aniketverma/";
+    window.location.href = "https://billybutcherfky.github.io/Project-portfolio/";
   } else {
     alert("Invalid Username or Password!");
   }
